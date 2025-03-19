@@ -16,8 +16,11 @@ func newDeck() deck {
     cards := deck{}
 
     cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
-    cardValues := []string{"Ace", "King", "Queen", "Jack", "10",
-                            "9", "8", "7", "6", "5", "4", "3", "2"}
+    cardValues := []string{"Ace", "Two", "Three", "Four"}
+
+    // {"Ace", "King", "Queen", "Jack", "10",
+    // "9", "8", "7", "6", "5", "4", "3", "2"}
+
     for _, suit := range cardSuits {
         for _, value := range cardValues {
             cards = append(cards, value+" of "+suit)
@@ -61,11 +64,4 @@ func (d deck) shuffleCards() {
         d[i], d[j] = d[j], d[i]
 	})
 }
-
-// func (d deck) shuffle() {
-//     for i := range d {
-//         newPosition := rand.Intn(len(d)-1)
-//         d[i], d[newPosition] = d[newPosition], d[i]
-//     }
-// }
 
